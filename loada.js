@@ -20,6 +20,11 @@ var loada = (function() {
 		loada.setAttribute("style", "display: none");
 	document.body.insertBefore(loada, document.body.firstChild);
 
+	var styles = document.createElement("link");
+		styles.setAttribute("rel", "stylesheet");
+		styles.setAttribute("href", "https://cdn.rawgit.com/keinu/loada/master/css.css");
+	document.head.appendChild(styles);
+
 	return {
 		show: show,
 		hide: hide,
