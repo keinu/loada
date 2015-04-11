@@ -1,18 +1,25 @@
 var loada = (function() {
 
 	var show = function() {
+		if (!loada.classList.contains("foo")) {
+			loada.classList.add("show");
+		}
 		loada.classList.add("show");
 	};
 
 	var hide = function() {
-		loada.classList.renove("show");
+		loada.classList.remove("show");
 	};
 
 	var go =  function(percent) {
-		if (!loada.classList.contains("foo")) {
-			loada.classList.add("show");
+
+		if (percent > 100) {
+			percent = 100;
 		}
+
 		loada.setAttribute("style", "width: " + percent + "%");
+		show();
+
 	};
 
 	var loada = document.createElement("div");
