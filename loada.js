@@ -1,10 +1,9 @@
 var loada = (function() {
 
 	var show = function() {
-		if (!loada.classList.contains("foo")) {
+		if (!loada.classList.contains("show")) {
 			loada.classList.add("show");
 		}
-		loada.classList.add("show");
 	};
 
 	var hide = function() {
@@ -24,7 +23,6 @@ var loada = (function() {
 
 	var loada = document.createElement("div");
 		loada.setAttribute("id", "loada");
-		loada.setAttribute("style", "display: none");
 	document.body.insertBefore(loada, document.body.firstChild);
 
 	var styles = document.createElement("link");
