@@ -42,8 +42,7 @@ var loada = (function() {
 
 	var styles = document.createElement("link");
 		styles.setAttribute("rel", "stylesheet");
-		//styles.setAttribute("href", "https://cdn.rawgit.com/keinu/loada/master/css.css");
-		styles.setAttribute("href", "../css.css");
+		styles.setAttribute("href", "https://cdn.rawgit.com/keinu/loada/master/css.css");
 	document.head.appendChild(styles);
 
 	return {
