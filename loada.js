@@ -26,8 +26,8 @@ var loada = (function() {
 			hide();
 		}
 
-		loada.style.transitionDuration = "1s, 1s, 1s";
-		loada.style.transitionTimingFunction = "ease, ease, ease";
+		loada.style.transitionDuration = "1s, 1s";
+		loada.style.transitionTimingFunction = "ease, ease";
 		loada.style.width = percent + "%";
 
 		show();
@@ -43,14 +43,19 @@ var loada = (function() {
 		// Go to the initial position
 		go(initialProgress);
 
-		// Set transition properties
-		loada.style.transitionDuration = "1s, 1s, " + (remainingDuration / 1000) + "s";
-		loada.style.transitionTimingFunction = "ease, ease, linear";
+		// Will wait for the go() to complete
+		setTimeout(function(){
 
-		// Delay this so the animation can be taken into account
-		setTimeout(function() {
-			loada.style.width = "100%";
-		}, 10);
+			// Set transition properties
+			loada.style.transitionDuration = "1s, " + (remainingDuration / 1000) + "s";
+			loada.style.transitionTimingFunction = "ease, linear";
+
+			// Delay this so the animation can be taken into account
+			setTimeout(function() {
+				loada.style.width = "100%";
+			}, 100);
+
+		}, 1100);
 
 		// Callback when it's done
 		setTimeout(function() {

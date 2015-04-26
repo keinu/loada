@@ -26,18 +26,17 @@
 	background-color: blue;
 	position: fixed;
 	border-radius: 3px;
-	top: -3px;
 	box-shadow: 0 0px 9px 0px #fff;
 	opacity: 0;
 	left: 0;
 	z-index: 88888;
-	transition-property: top, opacity, width;
-	transition-duration: 2s, 2s, 1s;
-	transition-timing-function: ease, ease, ease;
+	transition-property: opacity, width;
+	transition-duration: 1s, 1s;
+	transition-timing-function: ease, ease;
 
 	&.show {
-		top: 0;
 		opacity: 1;
+		width: 0;
 	}
 
 	&:after {
