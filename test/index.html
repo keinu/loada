@@ -59,7 +59,12 @@
 
 	// 1 min total
 	// 30 sec remaining
-	loada.linearProgress(1000 * 60 * 1, 1000 * 30);
+	loada.linearProgress(1000 * 60 * 1, 1000 * 30, function(){
+
+		console.log("done");
+
+	});
+
 
 	</script>
 

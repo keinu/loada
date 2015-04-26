@@ -6,22 +6,12 @@
 	-o-transform: translateZ(0);
 	transform: translateZ(0);
 
-	-webkit-transform: translate3d(0, 0, 0);
-	-moz-transform: translate3d(0, 0, 0);
-	-ms-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
-
-	-webkit-perspective: 1000;
-	-moz-perspective: 1000;
-	-ms-perspective: 1000;
-	perspective: 1000;
-
 	.pulse-mixin () {
 		from {
-			box-shadow: 0 0 0px 0px rgba(255, 255, 255, 50);
+			box-shadow: 0 0 0px 0px #fff;
 		}
 		to {
-			box-shadow: 0 0px 9px 0px #fff;
+			box-shadow: 0 0px 9px 1px #fff;
 		}
 	}
 
@@ -32,7 +22,7 @@
 	@keyframes pulse {.pulse-mixin;}
 
 	width: 0;
-	height: 3px;
+	height: 2px;
 	background-color: blue;
 	position: fixed;
 	border-radius: 3px;
@@ -43,7 +33,8 @@
 	z-index: 88888;
 	transition-property: top, opacity, width;
 	transition-duration: 1s, 1s, 1s;
-	transition-timing-function: linear, linear, linear;
+	transition-timing-function: ease, ease, ease;
+
 	&.show {
 		top: 0;
 		opacity: 1;
@@ -56,22 +47,11 @@
 		-o-transform: translateZ(0);
 		transform: translateZ(0);
 
-
-		-webkit-transform: translate3d(0, 0, 0);
-		-moz-transform: translate3d(0, 0, 0);
-		-ms-transform: translate3d(0, 0, 0);
-		transform: translate3d(0, 0, 0);
-
-		-webkit-perspective: 1000;
-		-moz-perspective: 1000;
-		-ms-perspective: 1000;
-		perspective: 1000;
-
 		content: " ";
 		background-color: white;
 		border-radius: 100%;
 		width: 3px;
-		height: 3px;
+		height: 2px;
 		float: right;
 		animation-name: pulse;
 		animation-duration: .2s;
