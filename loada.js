@@ -4,14 +4,18 @@ var loada = (function() {
 
 	// Show progress bar
 	var show = function() {
+
 		if (!loada.classList.contains("show")) {
 			loada.classList.add("show");
 		}
+
 	};
 
 	// Hide progress bar
 	var hide = function() {
+
 		loada.classList.remove("show");
+
 	};
 
 	// Go to desired percentage
@@ -24,7 +28,6 @@ var loada = (function() {
 
 		loada.style.transitionDuration = "1s, 1s, 1s";
 		loada.style.transitionTimingFunction = "ease, ease, ease";
-
 		loada.style.width = percent + "%";
 
 		show();
@@ -37,27 +40,35 @@ var loada = (function() {
 		var initialProgress = 100 - (remainingDuration / totalDuration * 100);
 			initialProgress = initialProgress.toFixed(4);
 
+		// Go to the initial position
 		go(initialProgress);
 
+		// Set transition properties
 		loada.style.transitionDuration = "1s, 1s, " + (remainingDuration / 1000) + "s";
 		loada.style.transitionTimingFunction = "ease, ease, linear";
 
+		// Delay this so the animation can be taken into account
 		setTimeout(function() {
 			loada.style.width = "100%";
 		}, 10);
 
-		loada.addEventListener("transitionend", callback);
+		// Callback when it's done
+		setTimeout(function() {
+			callback();
+		}, remainingDuration);
 
 	};
 
 	// Sets a callback when animation is complete
 	var onComplete = function(callback) {
+
 		if (typeof callback === "function") {
 			loada.addEventListener("transitionend", callback);
 		}
+
 	};
 
-
+	// Initiate the loader
 	loada = document.createElement("div");
 	loada.setAttribute("id", "loada");
 	document.body.insertBefore(loada, document.body.firstChild);
